@@ -1,0 +1,16 @@
+<section class="countries">
+	<a href="#/continent" data-ng-click="back($event)">Back...</a>
+	
+    <input type="text" placeholder="Search by country" data-ng-model="searchcountry"  data-ng-show="countryCount > '0'" data-ng-minlength="3">
+    <p data-ng-show="countryCount == '0'">No countries available.</p>
+    <p data-ng-show="countryCount > '0'">{{countryCount}}</p>
+    
+    <table data-ng-hide="countryCount == '0'">
+        <tr data-ng-repeat="country in countries | filter : {Name : searchcountry}"
+            data-ng-click="selectCountry($event, country)"
+            style="cursor:pointer;">
+            <td>{{country.Name}}</td>
+            <td>{{country.Region}}</td>
+        </tr>
+    </table>
+</section>

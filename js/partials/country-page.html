@@ -1,0 +1,31 @@
+<section class="info">
+    <div data-ng-show="editorVisible"
+        data-ng-include="'js/partials/editHOS.html'"
+        id="hoseditor"
+        class="editor shadow">
+    </div>
+    <a href="#/continent/{{bio.ContinentID}}" data-ng-click="back2($event, bio)">Back...</a>
+	<p data-ng-show="bioCount == '0'">No Data Available.</p>
+
+    <ul data-ng-hide="bioCount == '0'">
+            <li>Country Name: {{bio.Country}}</li>
+            <li>Continent: {{bio.Continent}}</li>
+            <li>Region: {{bio.Region}}</li>
+            <li>Surface Area: {{bio.SurfaceArea}}</li>
+            <li>Independent Since: {{bio.IndepYear}}</li>
+            <li>Population: {{bio.Population}}</li>
+            <li data-ng-hide="role !== 'admin'">Life Expectancy: {{bio.LifeExpectancy}}</li>
+            <li data-ng-hide="role !== 'admin'">GNP: {{bio.GNP}}</li>
+            <li data-ng-hide="role !== 'admin'"
+                data-ng-click="showEditHos($event, bio, 'hoseditor')"
+                data-ng-class="{'selected':selectedBio.A3Code===bio.A3Code}"
+                style="cursor:pointer;">Head of State: {{bio.HeadOfState}}</li>
+            <li>Local Name{{bio.LocalName}}</li>
+            <li>Government Form: {{bio.GovernmentForm}}</li>
+            <li>Capital City: {{bio.CapitalCity}}</li>
+            <li>District: {{bio.district}}</li>
+            <li>City's Population: {{bio.CityPop}}</li>
+            <li>Latitude: {{bio.lat}}</li>
+            <li>Longitude:{{bio.lng}}</li>
+    </ul>
+</section>

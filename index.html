@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html data-ng-app='GeoApp'>
+    <head>
+        <title>Geoworld</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="resources/css/app.css" />
+    </head>
+    <body>
+      <div id="page">
+        	<section data-ng-controller="IndexController">
+            <nav>
+              <h1 data-ng-click="back3($event)">geo<span>world</span></h1>
+              <ul>
+                <li data-ng-hide="status === 'ok'">
+                  <a data-ng-click="goLogin()" style="cursor:pointer;">Log In</a>
+                </li>
+                <li data-ng-hide="status !== 'ok'">
+                  <p>Welcome {{userid}}
+                    <span></span>
+                    <a data-ng-click="signOut()" style="cursor:pointer;">Log Out</a>
+                  </p>
+                </li>
+                <li><a href="testing.php">Testing</a></li>
+              </ul>
+            </nav>
+            <div class="cover">
+              <div></div>
+              <h1>{{title}}</h1>
+            </div>
+            <h2>{{geotitle}}</h2>
+			</section>
+			<article data-ng-view></article>
+			<footer data-ng-controller="FooterController">
+				<p>{{sysInfo.title}}, {{sysInfo.author}}</p>
+        
+			</footer>
+      </div>
+         
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-resource.js"></script>
+ 
+      <script src="js/app.js"></script>
+      <script src="js/controllers.js"></script>
+      <script src="js/services.js"></script>
+         
+    </body>
+</html>

@@ -1,0 +1,9 @@
+<section class="login">
+	<a href="#/continent" data-ng-click="back3($event)">Back...</a>
+    <form data-ng-show="userid != ''">
+    	<p data-ng-show="loginstatus !== ''" ng-model="loginstatus">{{loginstatus}}</p>
+		<input type="text" ng-model="username" required>
+		<input type="password" ng-model="password" required>
+		<button data-ng-click="signin()">Log In</button>
+	</form>
+</section>
